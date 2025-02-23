@@ -3,7 +3,7 @@ import os
 import sys
 import pandas as pd
 import pickle
-from src.logger import CustomException
+from src.exception import CustomException
 from flask import request
 from src.constant import *
 from src.utils.mail_utils import MainUtils
@@ -15,7 +15,7 @@ class PredictionPipelineConfig:
     prediction_output_dirname :str = "predictions"
     prediction_file_name :str = "prediction_file.csv"
     model_file_path  :str = os.path.join(artifact_folder,'model.pkl')
-    preprocessor_path :str = os.apth.join(artifact_folder,'preprocessor.pkl')
+    preprocessor_path :str = os.path.join(artifact_folder,'preprocessor.pkl')
     prediction_file_path :str = os.path.join(prediction_output_dirname,prediction_file_name)
 
 class PredictionPipeline:

@@ -1,6 +1,5 @@
 import sys
 import os
-
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
@@ -25,7 +24,7 @@ class TrainingPipeline:
     def start_model_training(self,train_arr,test_arr):
         try:
             model_trainer = ModelTrainer()
-            model_score =      model_trainer.initiate_model_trainer(
+            model_score =model_trainer.initiate_model_trainer(
                 train_arr,test_arr
             )
             return model_score

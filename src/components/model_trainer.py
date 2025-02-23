@@ -11,7 +11,7 @@ from sklearn.model_selection import GridSearchCV, train_test_split
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
-from src.utils.main_utils import MainUtils
+from src.utils.mail_utils import MainUtils
 from dataclasses import dataclass
 
 @dataclass
@@ -42,8 +42,8 @@ class ModelTrainer:
                 model.fit(X_train,Y_train)
                 Y_train_pred = model.predict(X_train)
                 Y_test_pred = model.predict(X_test)
-                train_model_score = accuracy_score(y_train, y_train_pred)
-                test_model_score = accuracy_score(y_test, y_test_pred)
+                train_model_score = accuracy_score(Y_train, Y_train_pred)
+                test_model_score = accuracy_score(Y_test, Y_test_pred)
                 report[list(models.keys())[i]] = test_model_score
                 
             return report
